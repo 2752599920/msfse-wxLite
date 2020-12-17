@@ -1,0 +1,45 @@
+<!--pages/shopinfo/shopinfo.wxml-->
+<view class="shopinfo">
+    <image src="https://c-xt.gitee.io/msfse/i/shop_img1.jpg" mode="widthFix" class="shop_img"></image>
+    <view class="name">
+        <text>Q堡堡</text>
+    </view>
+    <view class="imformation">
+      <view class="time">
+        <text>营业时间</text>
+        <text>周一至周日早上6:00-中午12:00</text>
+      </view>
+      <view class="address">
+        <view class="position">
+          <text>摊位地址</text>
+          <text>中山.五桂山街道</text>
+        </view>
+        <view class="tool">
+          <image src="https://c-xt.gitee.io/msfse/i/map.png" mode="widthFix"></image>
+        </view>
+      </view>
+      <view class="phone">
+        <text>联系电话</text>
+        <text>123456789</text>
+      </view>
+    </view>
+    <view class="comments">
+        <view class="top">
+          <text>摊位评论(10)</text>
+          <text class="more" bindtap="goComments">查看更多></text>
+        </view>
+        <view class="comment_user">
+          <view class="user">
+            <image src="https://c-xt.gitee.io/msfse/i/food2.png"></image>
+            <text>地摊君</text>
+          </view>
+          <view class="comments_text">
+            <text>真的很香！！</text>
+            <text>2020-12-14</text>
+          </view>
+        </view>
+    </view>
+    <view class="report" bindtap="goReport">
+      <text>举报店家</text>
+    </view>
+</view>

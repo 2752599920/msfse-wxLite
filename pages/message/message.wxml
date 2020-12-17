@@ -1,0 +1,12 @@
+<!--pages/message/message.wxml-->
+<view class="message">
+  <view class="message_window">
+    <image src="https://c-xt.gitee.io/msfse/i/food3.png" mode="aspectFill"></image>
+    <view class="message_text">
+      <text>尊敬的摊主，你现在正在使用我们的地摊小程序。现在你已经被包围了</text>
+    </view>
+  </view>
+  <view class="message_reply">
+    <input type="text" placeholder="发个消息回复呗~"></input>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+/* pages/newslist/newslist.wxss */
+.newlist{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.newlist .title{
+  width: 100%;
+  font-weight: bold;
+  font-size: 48rpx;
+}
+.source{
+  font-size: 32rpx;
+  color: #999;
+  display: flex;
+  flex-direction: column;
+  margin: 30rpx auto;
+}
+.newlist image{
+  width: 100%;
+}

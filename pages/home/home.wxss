@@ -1,0 +1,154 @@
+/* pages/home/home.wxss */
+.home{
+  box-sizing: border-box;
+  padding: 20rpx 30rpx 0 30rpx;
+}
+.search{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 2px solid #ec3f42;
+  box-sizing: border-box;
+  padding-left:25rpx;
+
+}
+#search{
+  width: 100%;
+  height: 100%;
+}
+
+.placeholder{
+  color:#eee;
+}
+.button{
+width: 20%;
+height: 100%;
+line-height: 100rpx;
+text-align: center;
+color: #fff;
+background: #ec3f42;
+}
+.banner{
+  width: 100%;
+  height: 204rpx;
+  margin:30rpx auto;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.banner_img{
+width: 100%;
+height: 100%;
+}
+.categroy,
+.shop{
+  width: 100%;
+  margin:30rpx auto;
+}
+.categroy_title,
+.sale_title,
+.shop_title{
+  font-weight: bold;
+  color:#333;
+}
+.categroy_link{
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  margin-top: 10rpx;
+}
+.category_img{
+  width: 30%;
+  height: 200rpx;
+  /* background: chartreuse; */
+}
+.category_img image{
+  width: 100%;
+  height: 100%;
+  border-radius: 25rpx;
+}
+.sale{
+width: 100%;
+}
+.sale_list{
+  height: 400rpx;
+  width:100%;
+  display: flex;
+  margin-top: 20rpx;
+  justify-content: space-between;
+}
+.sale_left,
+.sale_right{
+  width: 47%;
+  height: 100%;
+}
+.sale_left image{
+  width: 100%;
+  height: 100%;
+  border-radius: 25rpx;
+}
+.sale_right {
+  display: flex;
+  flex-direction: column;
+}
+.right_bottom,
+.right_top{
+  width: 100%;
+  height: 47%;
+}
+.right_top{
+  margin-bottom: 6%;
+}
+.sale_right image{
+  height: 100%;
+  width: 100%;
+  border-radius: 25rpx;
+}
+.shop_link{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* background: chocolate; */
+  margin-top: 10rpx;
+}
+.shop_link_left,
+.shop_link_right{
+  width: 47%;
+}
+.shop_img{
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  border-radius: 25rpx;
+  background: #ffffff;
+  box-shadow:  2px 3px 6px #bec4c4, 
+              -2px -3px 6px #ffffff;
+  margin-bottom: 50rpx;
+  overflow: hidden;
+}
+.shop_img image{
+  width: 100%;
+}
+.imformation{
+  width: 100%;
+  box-sizing: border-box;
+  padding:20rpx;
+}
+.imformation text{
+  display: block;
+  width: 100%;
+}
+.shop_name{
+  font-size:46rpx;
+  color:#ec3f42;
+}
+.shop_info{
+  font-size:28rpx;
+  color: #333;
+}
+.shop_space{
+  text-align: right;
+  font-size:24rpx;
+  color: #999;
+}

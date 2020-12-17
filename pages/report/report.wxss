@@ -1,0 +1,61 @@
+/* pages/report/report.wxss */
+.report{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.report_article{
+  width:100%;
+
+}
+.category{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20rpx 0;
+}
+.category text{
+  padding:5rpx 20rpx;
+  margin:10rpx 20rpx;
+  border-radius: 100rpx;
+  font-size: 32rpx;
+  background-image:linear-gradient(to right,#6930c3,#4361ee) ;
+  color: #fff;
+}
+.update_img{
+  width: 60%;
+  border:2px dashed #999;
+  border-radius: 25rpx;
+  box-sizing: border-box;
+  padding:10rpx;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+}
+.update_img image{
+width:230rpx;
+margin:0 auto;
+/* height: 160rpx; */
+}
+.update_img text{
+  color: #999;
+  margin-bottom: 20rpx;
+}
+.anonymous{
+  font-size: 24rpx;
+  color:#ec3f42;
+}
+.report_button{
+  width: 100%;
+  height: 100rpx;
+  color: #fff;
+  margin-top: 30rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-image:linear-gradient(to right,#ec3f42,#e00b52);
+}
+.report_button text{
+  line-height: 100rpx;
+}

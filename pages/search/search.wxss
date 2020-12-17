@@ -1,0 +1,54 @@
+/* pages/search/search.wxss */
+.search{
+  box-sizing: border-box;
+  padding: 20rpx 30rpx 0 30rpx;
+}
+.search_input{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 2px solid #ec3f42;
+  box-sizing: border-box;
+  padding-left:25rpx;
+
+}
+#search{
+  width: 100%;
+  height: 100%;
+}
+
+.placeholder{
+  color:#eee;
+}
+.button{
+width: 20%;
+height: 100%;
+line-height: 100rpx;
+text-align: center;
+color: #fff;
+background: #ec3f42;
+}
+.banner{
+  width: 100%;
+  height: 204rpx;
+  margin:30rpx auto;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.banner_img{
+width: 100%;
+height: 100%;
+}
+.search_list{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30rpx;
+}
+.search_often{
+  width: 50%;
+  text-align: center;
+  margin-top: 20rpx;
+}

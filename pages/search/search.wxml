@@ -1,0 +1,30 @@
+<!--pages/search/search.wxml-->
+<view class="search">
+  <view class="search_input">
+    <input type="search" name="search" id="search" placeholder="最新摊位--美食"></input>
+    <view class="button">搜索</view>
+  </view>
+  <view class="banner">
+    <image src="https://c-xt.gitee.io/msfse/i/banner2.png" alt="" class="banner_img"></image>
+  </view>
+  <view class="search_list">
+    <view class="search_often">
+      <text>烧烤</text>
+    </view>
+    <view class="search_often">
+      <text>烧烤</text>
+    </view>
+    <view class="search_often">
+      <text>烧烤</text>
+    </view>
+    <view class="search_often">
+      <text>烧烤</text>
+    </view>
+    <view class="search_often">
+      <text>烧烤</text>
+    </view>
+    <view class="search_often">
+      <text>烧烤</text>
+    </view>
+  </view>
+</view>

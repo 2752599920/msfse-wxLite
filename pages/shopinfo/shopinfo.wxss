@@ -1,0 +1,115 @@
+/* pages/shopinfo/shopinfo.wxss */
+.shopinfo{
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+.shop_img{
+  width: 100%;
+  height: 200rpx;
+}
+
+.imformation view text{
+  display: block;
+  width: 100%;
+  text-indent: 30rpx;
+}
+.imformation view>text:nth-child(1){
+  font-weight: 500;
+}
+.imformation view>text:nth-child(2){
+  color: #666;
+}
+.name{
+  color: #fff;
+  font-size: 72rpx ;
+  box-sizing: border-box;
+  padding:0 30rpx;
+  letter-spacing: 10rpx;
+  background-image:linear-gradient(to right,#ec3f42,#e00b52) ;
+}
+
+.time{
+  box-sizing: border-box;
+  padding: 30rpx 0;
+  width: 100%;
+}
+.address{
+  box-sizing: border-box;
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+.tool{
+  width: 30%;
+  height: 100%;
+  margin-right: 30rpx;
+}
+.tool image{
+  width: 100%;
+}
+.phone{
+  box-sizing: border-box;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+.comments::before{
+  display: block;
+  content: '';
+  width: 100%;
+  height: 20rpx;
+  background:#eee;
+}
+.report{
+  text-indent: 30rpx;
+  text-align: center;
+}
+.comments::after{
+  display: block;
+  content: '';
+  width: 100%;
+  height: 20rpx;
+  background:#eee;
+}
+.report text{
+  line-height: 100rpx;
+  height: 100rpx;
+  color: #ec3f42;
+}
+.comments .top{
+  line-height: 100rpx;
+  width:100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.top text{
+  box-sizing: border-box;
+  padding:0 30rpx;
+}
+.top .more{
+  color: #ec3f42;
+}
+.comment_user{
+  margin-top: 20rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.user{
+  display: flex;
+  align-items:center;
+}
+.user image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%;
+}
+.user text{
+  margin-left:20rpx;
+}
+.comment_user .comments_text{
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx auto;
+}

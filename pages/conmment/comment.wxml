@@ -1,0 +1,24 @@
+<!--pages/conmment/comment.wxml-->
+<view class="comments">
+  <view class="comments_user">
+    <view class="comments_top">
+      <view class="user">
+            <image src="https://c-xt.gitee.io/msfse/i/food2.png"></image>
+            <text>地摊君</text>
+          </view>
+      </view>
+      <view class="comments_text">
+        <text>真的很香！！</text>
+        <text>2020-12-14</text>
+      </view>
+      <view class="reply">
+        <text>评论</text>
+        <image src="https://c-xt.gitee.io/msfse/i/link.png" class="like_icon"></image>
+        <text>点赞</text>
+      </view>
+  </view>
+  <view class="user_comment">
+      <textarea cols="30" rows="10" placeholder="请输入评论内容" class="text"></textarea>
+      <view class="button">提交</view>
+  </view>
+</view>

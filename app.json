@@ -1,0 +1,59 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/news/news",
+    "pages/shop/shop",
+    "pages/map/map",
+    "pages/my/my",
+    "pages/scan/scan",
+    "pages/search/search",
+    "pages/report/report",
+    "pages/reply/reply",
+    "pages/message/message",
+    "pages/category/category",
+    "pages/shopinfo/shopinfo",
+    "pages/conmment/comment",
+    "pages/newslist/newslist",
+    "pages/feedback/feedback"
+
+  ],
+  "window":{
+    "backgroundColor": "#000",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "list":[
+      {
+        "pagePath":"pages/home/home",
+        "text":"首页",
+        "iconPath":"./images/home.png",
+        "selectedIconPath":"./images/home_active_selected.png"
+      },
+      {
+        "pagePath":"pages/map/map",
+        "text":"附近",
+        "iconPath":"./images/map1.png",
+        "selectedIconPath":"./images/map1_active_selected.png"
+      },
+      {
+        "pagePath":"pages/news/news",
+        "text":"咨讯",
+        "iconPath":"./images/new.png",
+        "selectedIconPath":"./images/new_active_selected.png"
+      },
+      {
+        "pagePath":"pages/my/my",
+        "text":"我的",
+        "iconPath":"./images/my.png",
+        "selectedIconPath":"./images/my_active_selected.png"
+      }
+    ]
+  },
+  "borderStyle":"white",
+  "selectedColor":"red",
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

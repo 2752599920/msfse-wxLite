@@ -1,0 +1,82 @@
+<!--pages/home/home.wxml-->
+<view class="home">
+  <view class="search"bindtap="gotoSearch">
+    <input type="search" name="search" id="search" placeholder="最新摊位--美食" disabled="true"></input>
+    <view class="button">搜索</view>
+  </view>
+  <view class="banner">
+    <image src="https://c-xt.gitee.io/msfse/i/banner1.png" alt="" class="banner_img"></image>
+  </view>
+  <view class="categroy">
+    <text class="categroy_title">商品类型</text>
+    <view class="categroy_link">
+      <view class="category_img" bindtap="goto">
+        <image src="https://c-xt.gitee.io/msfse/i/category1.jpg" mode="aspectFill" ></image>
+      </view>
+      <view class="category_img" bindtap="goto">
+        <image src="https://c-xt.gitee.io/msfse/i/category2.jpg" mode="aspectFill"></image>
+      </view>
+      <view class="category_img" bindtap="goto">
+        <image src="https://c-xt.gitee.io/msfse/i/category3.jpg" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+  <view class="sale">
+    <text class="sale_title">摊位大促销</text>
+    <view class="sale_list">
+      <view class="sale_left">
+        <image src="https://c-xt.gitee.io/msfse/i/food1.png" mode="aspectFill"></image>
+      </view>
+      <view class="sale_right">
+        <view class="right_top">
+          <image src="https://c-xt.gitee.io/msfse/i/food4.png" mode="aspectFill"></image>
+        </view>
+        <view class="right_bottom">
+          <image src="https://c-xt.gitee.io/msfse/i/food3.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="shop">
+    <text class="shop_title">猜你喜欢</text>
+    <view class="shop_link">
+      <view class="shop_link_left">
+        <view class="shop_img" bindtap="goShop">
+          <image mode="widthFix" src="https://c-xt.gitee.io/msfse/i/shop_img1.jpg" alt=""></image>
+          <view class="imformation">
+            <text class="shop_name">Q堡堡</text>
+            <text class="shop_info">中山.五桂山街道</text>
+            <text class="shop_space">距离100m</text>
+          </view>
+        </view>
+        <view class="shop_img">
+          <image mode="widthFix" src="https://c-xt.gitee.io/msfse/i/shop_img2.jpg" alt="" ></image>
+          <view class="imformation">
+            <text class="shop_name">Q堡堡</text>
+            <text class="shop_info">中山.五桂山街道</text>
+            <text class="shop_space">距离100m</text>
+          </view>
+        </view>
+      </view>
+      <view class="shop_link_right">
+        <view class="shop_img">
+          <image mode="widthFix" src="https://c-xt.gitee.io/msfse/i/shop_img2.jpg" alt="" ></image>
+          <view class="imformation">
+            <text class="shop_name">Q堡堡</text>
+            <text class="shop_info">中山.五桂山街道</text>
+            <text class="shop_space">距离100m</text>
+          </view>
+        </view>
+        <view class="shop_img">
+          <image mode="widthFix" src="https://c-xt.gitee.io/msfse/i/shop_img1.jpg" alt="" ></image>
+          <view class="imformation">
+            <text class="shop_name">Q堡堡</text>
+            <text class="shop_info">中山.五桂山街道</text>
+            <text class="shop_space">距离100m</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+ 
+</view>

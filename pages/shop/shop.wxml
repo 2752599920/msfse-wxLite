@@ -1,0 +1,53 @@
+<!--pages/shop/shop.wxml-->
+<view class="shop">
+  <!-- 推荐热卖商店 -->
+  <view class="hot_shop">
+    <text class="title">热门推荐</text>
+    <view class="hot_info">
+      <image src="https://c-xt.gitee.io/msfse/i/food1.png" mode="aspectFill"></image>
+      <view class="shop_text">
+        <text class="shop_name">Q堡堡</text>
+        <text class="comments">用户好评3星</text>
+        <view>
+          <text>最低5元起</text>
+          <text class="views">浏览量+10000</text>
+        </view>
+      </view>
+    </view>
+    <view class="hot_info">
+      <image src="https://c-xt.gitee.io/msfse/i/food1.png" mode="aspectFill"></image>
+      <view class="shop_text">
+        <text class="shop_name">Q堡堡</text>
+        <text class="comments">用户好评3星</text>
+        <view>
+          <text>最低5元起</text>
+          <text class="views">浏览量+10000</text>
+        </view>
+      </view>
+    </view>
+    <view class="hot_info">
+      <image src="https://c-xt.gitee.io/msfse/i/food1.png" mode="aspectFill"></image>
+      <view class="shop_text">
+        <text class="shop_name">Q堡堡</text>
+        <text class="comments">用户好评3星</text>
+        <view>
+          <text>最低5元起</text>
+          <text class="views">浏览量+10000</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="shop_list">
+    <view class="shop_info">
+      <image src="https://c-xt.gitee.io/msfse/i/food1.png" mode="aspectFill"></image>
+      <view class="shop_text">
+        <text class="shop_name">Q堡堡</text>
+        <text class="comments">用户好评3星</text>
+        <view>
+          <text>最低消费5元起</text>
+          <text class="views">浏览量+10000</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
