@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    bannerData:[],
     category:[],
     boothList:[],
   },
@@ -20,8 +21,16 @@ Page({
     this.loadCategory()
     this.loadBoothList()
   },
-  loadSwiper(options){
-    
+  loadSwiper(){
+    let options = {
+      url:'getSlide'
+    }
+    home._get(options,(res)=>{
+      console.log(res);
+      this.setData({
+        bannerData:res.data.slide
+      })
+    })
   },
   loadCategory(){
     let options = {

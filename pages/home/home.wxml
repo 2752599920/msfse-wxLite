@@ -5,16 +5,15 @@
     <view class="button">搜索</view>
   </view>
   <view class="banner">
-    <view class="page-section page-section-spacing swiper">
-      <swiper indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
+      <swiper indicator-dots='true' autoplay='true' interval='1000' circular='true'>
+        <block wx:for="{{bannerData}}" wx:key="id">
           <swiper-item>
-            <view class="swiper-item {{item}}"></view>
+            <navigator class='swiper-item'>
+              <image mode='widthFix' src='{{item.cover}}'></image>
+            </navigator>
           </swiper-item>
         </block>
       </swiper>
-    </view>
     <!-- <image src="https://c-xt.gitee.io/msfse/i/banner1.png" alt="" class="banner_img"></image> -->
   </view>
   <view class="categroy">
