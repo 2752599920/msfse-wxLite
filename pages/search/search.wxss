@@ -52,3 +52,33 @@ height: 100%;
   text-align: center;
   margin-top: 20rpx;
 }
+.histroy{
+  display: flex;
+  justify-content: space-between;
+}
+.icon,
+.text{
+  vertical-align: middle;
+}
+.icon{
+  color: #ec3f42;
+}
+.text{
+  color: #999;
+  margin-left: 5rpx;
+  font-size: 32rpx;
+}
+.histroy_words{
+  margin-top: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.histroy_words text{
+  vertical-align: middle;
+  padding:5rpx 20rpx;
+  margin:10rpx;
+  border-radius: 100rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background-image:linear-gradient(to right,#6930c3,#4361ee) ;
+}

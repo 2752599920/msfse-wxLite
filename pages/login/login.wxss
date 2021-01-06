@@ -1,0 +1,23 @@
+/* pages/login/login.wxss */
+.login{
+  width: 100%;
+}
+.text{
+  width: 100%;
+  color: #666;
+  text-align: center;
+}
+.button{
+  width: 100% !important;
+  border-radius: 0rpx;
+  color: aliceblue;
+  position: fixed;
+  bottom: 50%;
+  /* width: 100%; */
+  background-image:linear-gradient(to right,#ec3f42,#e00b52) ;
+}
+.icon{
+  width: 100%;
+  font-size:200rpx;
+  margin-top:100rpx;
+}

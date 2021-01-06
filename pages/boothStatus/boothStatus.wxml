@@ -1,0 +1,33 @@
+<!--pages/boothStatus/boothStatus.wxml-->
+<view class="booth_status">
+  <van-notice-bar
+    left-icon="volume-o"
+    text="在指定的摊位上摆摊是我们坚守的原则"
+  />
+  <view class="status">
+    <van-panel title="摊主扫码记录" desc="2020-12-28 6：30" status="营业中">
+      <view class="status_list">
+        <text>您当前所在地址：广东理工职业学院A区01摊位</text>
+        <view class="user_time">
+          <text>地摊使用时间倒计时：</text>
+          <van-count-down time="{{ time }}" class="time"/>
+          <!-- <van-count-down time="{{ time }}" format="DD 天 HH 时 mm 分 ss 秒" /> -->
+        </view>
+      </view>
+    </van-panel>
+    <van-divider />
+  </view>
+  <view class="status">
+    <van-panel title="摊主扫码记录" desc="2020-12-28 6：30" status="营业结束">
+      <view class="status_list">
+        <text>您当前所在地址：广东理工职业学院A区01摊位</text>
+        <view class="user_time">
+          <text>地摊使用时间倒计时：</text>
+          <van-count-down time="{{ Endtime }}" class="time"/>
+          <!-- <van-count-down time="{{ time }}" format="DD 天 HH 时 mm 分 ss 秒" /> -->
+        </view>
+      </view>
+    </van-panel>
+    <van-divider />
+  </view>
+</view>

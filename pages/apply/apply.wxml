@@ -1,0 +1,235 @@
+<!--pages/apply/apply.wxml-->
+<view class="apply">
+  <van-steps steps="{{ steps }}" active="{{ active }}" />
+  <van-cell-group wx:if="{{active == 0}}">
+    <van-field
+      value="{{ name }}"
+      label="摊主姓名"
+      bind:input = "getName"
+      placeholder="请输入真实姓名"
+      border="{{ false }}"
+      required="true"
+    />
+    <view class="section">
+      <picker bindchange="bindSexChange" value="{{index}}" range="{{sex}}">
+        <van-field
+          value="{{ sex[sexIndex]}}"
+          label="性别"
+          placeholder="请输入你的性别"
+          required="true"
+          readonly="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <van-field
+      value="{{ mobile }}"
+      label="电话号码"
+      bind:input = "getMobile"
+      placeholder="请输入电话号码"
+      required="true"
+      border="{{ false }}"
+    />
+    <view class="section">
+      <picker bindchange="bindTypeChange" value="{{index}}" range="{{type}}">
+        <van-field
+          value="{{type[Typeindex]}}"
+          label="证件类型"
+          placeholder="请选择证件类型"
+          readonly="true"
+          required="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <van-field
+      value="{{ IDCard }}"
+      label="身份证号码"
+      bind:input = "getIDCard"
+      placeholder="请输入身份证号码"
+      required="true"
+      border="{{ false }}"
+    />
+    <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+    <text>上传证件照</text>
+    <button bindtap="goto" wx:if="{{active == 0}}">下一步</button>
+  </van-cell-group>
+  <van-cell-group wx:if="{{active > 0 && active < 2}}">
+    <van-field
+      value="{{ boothName}}"
+      label="摊位名称"
+      bind:input="getBoothName"
+      placeholder="请输入摊位名称"
+      border="{{ false }}"
+      required="true"
+    />
+    <view class="section">
+      <picker bindchange="bindBoothTypeChange" value="{{index}}" range="{{boothType}}">
+        <van-field
+          value="{{ boothType[boothTypeindex] }}"
+          label="摊位类型"
+          placeholder="请选择摊位类型"
+          readonly="true"
+          required="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <view class="section">
+      <picker bindchange="bindCategoryChange" value="{{index}}" range="{{category}}">
+        <van-field
+          value="{{ category[categoryindex] }}"
+          label="商品分类"
+          placeholder="请选择商品分类"
+          readonly="true"
+          required="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <view class="section">
+      <picker bindchange="bindStagesOfUseChange" value="{{index}}" range="{{stagesOfUse}}">
+        <van-field
+          value="{{ stagesOfUse[index]}}"
+          label="营销时间"
+          placeholder="请选择营销时间"
+          required="true"
+          readonly="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <view class="section">
+      <picker mode="region" bindchange="bindRegionChange" value="{{address}}" custom-item="{{customItem}}">
+        <van-field
+          value="{{address[0]}} {{address[1]}} {{address[2]}}"
+          label="摊位地址"
+          placeholder="请选择摊位地址"
+          required="true"
+          readonly="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+    <text>上传摊位图片</text>
+    <button bindtap="gotoBack" wx:if="{{active>0}}" class="back">上一步</button>
+    <button bindtap="gotoNext" wx:if="{{active > 0 && active < 2}}" class="next">下一步</button>
+  </van-cell-group>
+  <van-cell-group wx:if="{{active > 1 && active < 3}}">
+    <van-field
+      value="{{ name }}"
+      label="摊主姓名"
+      bind:input = "getName"
+      placeholder="请输入真实姓名"
+      border="{{ false }}"
+      readonly="true"
+      required="true"
+    />
+    <view class="section">
+      <picker bindchange="bindSexChange" value="{{index}}" range="{{sex}}" disabled="true">
+        <van-field
+          value="{{ sex[sexIndex]}}"
+          label="性别"
+          placeholder="请输入你的性别"
+          required="true"
+          readonly="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <van-field
+      value="{{ mobile }}"
+      label="电话号码"
+      bind:input = "getMobile"
+      placeholder="请输入电话号码"
+      required="true"
+      readonly="true"
+      border="{{ false }}"
+    />
+    <view class="section">
+      <picker bindchange="bindTypeChange" value="{{index}}" range="{{type}}" disabled="true">
+        <van-field
+          value="{{type[Typeindex]}}"
+          label="证件类型"
+          placeholder="请选择证件类型"
+          readonly="true"
+          required="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <van-field
+      value="{{ IDCard }}"
+      label="身份证号码"
+      bind:input = "getIDCard"
+      placeholder="请输入身份证号码"
+      required="true"
+      readonly="true"
+      border="{{ false }}"
+    />
+    <van-field
+      value="{{ boothName}}"
+      label="摊位名称"
+      bind:input="getBoothName"
+      placeholder="请输入摊位名称"
+      border="{{ false }}"
+      required="true"
+      readonly="true"
+    />
+    <view class="section">
+      <picker bindchange="bindBoothTypeChange" value="{{index}}" range="{{boothType}}" disabled="true">
+        <van-field
+          value="{{ boothType[boothTypeindex] }}"
+          label="摊位类型"
+          placeholder="请选择摊位类型"
+          readonly="true"
+          required="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <view class="section">
+      <picker bindchange="bindCategoryChange" value="{{index}}" range="{{category}}" disabled="true">
+        <van-field
+          value="{{ category[categoryindex] }}"
+          label="商品分类"
+          placeholder="请选择商品分类"
+          readonly="true"
+          required="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <view class="section">
+      <picker bindchange="bindStagesOfUseChange" value="{{index}}" range="{{stagesOfUse}}" disabled="true">
+        <van-field
+          value="{{ stagesOfUse[index]}}"
+          label="营销时间"
+          placeholder="请选择营销时间"
+          required="true"
+          readonly="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <view class="section">
+      <picker mode="region" bindchange="bindRegionChange" value="{{address}}" custom-item="{{customItem}}" disabled="true">
+        <van-field
+          value="{{address[0]}} {{address[1]}} {{address[2]}}"
+          label="摊位地址"
+          placeholder="请选择摊位地址"
+          required="true"
+          readonly="true"
+          border="{{ false }}"
+        />
+      </picker>
+    </view>
+    <button bindtap="gotoBack" wx:if="{{active>0}}" class="back">上一步</button>
+    <button bindtap="gotoEnd" wx:if="{{active > 1 && active < 3}}" class="next">提交</button>
+  </van-cell-group>
+  <view wx:if="{{active == 3}}">
+    <text>审核中...</text>
+    <button bindtap="gotoHome">返回首页</button>
+  </view>
+</view>

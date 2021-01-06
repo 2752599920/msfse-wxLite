@@ -33,6 +33,12 @@
   padding: 30rpx 0;
   width: 100%;
 }
+.distance{
+  box-sizing: border-box;
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
 .address{
   box-sizing: border-box;
   padding: 30rpx 0;
@@ -112,4 +118,9 @@
   display: flex;
   justify-content: space-between;
   margin: 30rpx auto;
+}
+.comments_stars,
+.comments_time{
+text-align: right;
+font-size: 32rpx;
 }

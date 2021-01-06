@@ -115,6 +115,8 @@ width: 100%;
 .shop_link_left,
 .shop_link_right{
   width: 47%;
+  /* display: flex;
+  flex-wrap: wrap; */
 }
 .shop_img{
   width: 100%;

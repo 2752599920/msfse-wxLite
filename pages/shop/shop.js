@@ -1,20 +1,37 @@
 // pages/shop/shop.js
+import {ShopList} from './shop-model.js'
+var shopList = new ShopList()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    ShopList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // console.log(options);
+    this.loadShopList(options.type)
 
   },
-
+  loadShopList(type){
+    shopList.getShopList(type,(res)=>{
+      this.setData({
+        ShopList:res.data.BoothList
+      })
+    })
+  },
+  
+  gotoBoothList(e){
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `../shopinfo/shopinfo?id=${id}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,0 +1,39 @@
+<!--pages/comment/comment.wxml-->
+<view class="comments">
+  <view class="comments_user">
+    <view wx:for="{{CommentData}}" class="comment_list" wx:key="index">
+      <view class="comments_top">
+          <view class="user">
+            <image src="https://c-xt.gitee.io/msfse/i/food2.png"></image>
+            <text>地摊君</text>
+          </view>
+      </view>
+      <view class="comments_text">
+        <text>{{item.text}}</text>
+      </view>
+      <view class="comments_img" wx:if="{{ item.imgs != null }}">
+        <image src="{{item.imgs}}" mode="aspectFill" ></image>
+      </view>
+      <view class="comment_time">
+        <text>{{item.created_at}}</text>
+      </view>
+      <view class="comment_rate">
+        <van-rate count="5" value="{{item.stars}}" void-color="#ec3f42"  readonly="true"/>
+      </view>
+      <view class="reply">
+        <van-icon name="chat-o" class="icon"/>
+        <text>评论</text>
+        <image src="https://c-xt.gitee.io/msfse/i/link.png" class="like_icon" ></image>
+        <text>点赞</text>
+      </view>
+    </view>
+  </view>
+  <view class="user_comment">
+      <textarea cols="30" rows="10" placeholder="请输入评论内容" class="text" bindinput="getwords"></textarea>
+      <view class="update_img">
+        <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead"/>
+      </view>
+      <van-rate count="5" value="{{ stars }}" bind:change="onChange"/>
+      <view class="button" bindtap="addComment">提交</view>
+  </view>
+</view>

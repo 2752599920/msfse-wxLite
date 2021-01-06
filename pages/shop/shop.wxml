@@ -37,11 +37,11 @@
       </view>
     </view>
   </view>
-  <view class="shop_list">
-    <view class="shop_info">
-      <image src="https://c-xt.gitee.io/msfse/i/food1.png" mode="aspectFill"></image>
+  <view class="shop_list" wx:for="{{ShopList}}" wx:key="index">
+    <view class="shop_info" data-id="{{item.id}}" bindtap="gotoBoothList">
+      <image src="{{item.imgs}}" mode="aspectFill"></image>
       <view class="shop_text">
-        <text class="shop_name">Q堡堡</text>
+        <text class="shop_name">{{item.boothName}}</text>
         <text class="comments">用户好评3星</text>
         <view>
           <text>最低消费5元起</text>

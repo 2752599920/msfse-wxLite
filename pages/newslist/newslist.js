@@ -1,27 +1,35 @@
 // pages/newslist/newslist.js
+import {Newslist} from './newslist-model'
+var newslist = new Newslist()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    newsList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  this.loadNewsList(options.id)
   },
-
+  loadNewsList(id){
+      newslist.getNewslist(id,(res)=>{
+        this.setData({
+          newsList:res.data.Article
+        })
+      })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
-
+  
   /**
    * 生命周期函数--监听页面显示
    */

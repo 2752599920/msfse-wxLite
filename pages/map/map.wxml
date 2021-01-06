@@ -1,13 +1,5 @@
 <view>
-  <map id="map" scale="14" longitude='{{longitude}}' latitude='{{latitude}}' show-location markers='{{markers}}' bindcallouttap="showDetail">
-    <cover-view class="detail" wx:if="{{show}}">
-      <cover-image src="https://c-xt.gitee.io/msfse/i/3.jpg"></cover-image>
-      <cover-view class="describe">广东理工职业学院</cover-view>
-      <cover-view class="btn">
-        <button bindtap="hiddenDetail">取消</button>
-        <button>到这里去</button>
-      </cover-view>
-    </cover-view>
+  <map id="map" scale="20" longitude='{{longitude}}' latitude='{{latitude}}' show-location markers='{{markers}}' bindcallouttap="toShopinfo">
   </map>
 </view>
 <view class="input">

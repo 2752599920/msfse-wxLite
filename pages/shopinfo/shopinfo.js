@@ -1,23 +1,63 @@
 // pages/shopinfo/shopinfo.js
+import {ShopInfo} from './shopinfo-model'
+var shopInfo = new ShopInfo();
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    booth:[],
+    commentList:[],
+    distance:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.loadshopInfo(options.id)
+    this.loadCommentList(options.id)
   },
-  goComments(){
-    wx.navigateTo({
-      url: '../conmment/comment',
+  loadshopInfo(id){
+    var options = {
+      url:`getBooth?boothId=${id}`
+    }
+    shopInfo._get(options,(res)=>{
+      let {GPS}=res.data.Booth[0];
+      let latitude = GPS.split(',')[0];
+      let longitude = GPS.split(',')[1];
+      wx.getLocation({
+        altitude: 'altitude',
+        success:(result)=>{
+          let distance = app.GetDistance(result.latitude,result.longitude,latitude,longitude);
+          this.setData({
+            booth:res.data.Booth,
+            distance
+          })
+        }
+      })
     })
+  },
+  loadCommentList(id){
+    var options = {
+      url:`getCommentList?boothId=${id}`
+    }
+    shopInfo._get(options,(res)=>{
+      // console.log(res);
+      this.setData({
+        commentList:res.data.CommentList
+      })
+    })
+  },
+  goComments(e){
+    let id = e.currentTarget.dataset.id
+    console.log(id);
+    wx.navigateTo({
+      url: `../comment/comment?boothId=${id}`,
+    })
+    // console.log(id);
   },
   goReport(){
     wx.navigateTo({

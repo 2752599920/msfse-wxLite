@@ -1,36 +1,15 @@
 <!--pages/category/category.wxml-->
 <view class="category">
   <view class="category_img">
-    <image src="https://c-xt.gitee.io/msfse/i/category1.jpg" mode="widthFix"></image>
+    <image src="{{cover}}" mode="widthFix"></image>
   </view>
   <view class="category_list">
-    <view class="category_info">
-      <view class="list" bindtap="goto">
-        <image src="https://c-xt.gitee.io/msfse/i/food1.png" mode="aspectFill"></image>
+    <view class="category_info" wx:for="{{categoryList}}" wx:key="index">
+      <view class="list" bindtap="goto" data-name="{{item.name}}">
+        <image src="{{item.cover}}" mode="aspectFill"></image>
         <view class="img_text">
-          <text>烧烤</text>
+          <text>{{item.name}}</text>
           <text>附近有100家</text>
-        </view>
-      </view>
-      <view class="list">
-        <image src="https://c-xt.gitee.io/msfse/i/food2.png" mode="aspectFill"></image>
-        <view class="img_text">
-          <text>早餐</text>
-          <text>附近有10家</text>
-        </view>
-      </view>
-      <view class="list">
-        <image src="https://c-xt.gitee.io/msfse/i/food3.png" mode="aspectFill"></image>
-        <view class="img_text">
-          <text>面食</text>
-          <text>附近有10家</text>
-        </view>
-      </view>
-      <view class="list">
-        <image src="https://c-xt.gitee.io/msfse/i/food4.png" mode="aspectFill"></image>
-        <view class="img_text">
-          <text>水果</text>
-          <text>附近有10家</text>
         </view>
       </view>
     </view>

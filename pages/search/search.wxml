@@ -1,8 +1,21 @@
 <!--pages/search/search.wxml-->
 <view class="search">
   <view class="search_input">
-    <input type="search" name="search" id="search" placeholder="最新摊位--美食"></input>
-    <view class="button">搜索</view>
+    <input type="search" name="search" id="search" placeholder="最新摊位--美食" bindinput="bindKeyInput"></input>
+    <view class="button" bindtap="sendKeyWords">搜索</view>
+  </view>
+  <view class="histroy" wx:if="{{history.length != 0}}">
+    <view class="search_histroy">
+      <van-icon name="clock" class="icon"/>
+      <text class="text">搜索历史</text>
+    </view>
+    <view class="del">
+      <van-icon name="delete" class="icon"/>
+      <text class="text" bindtap="delHistroyWords">清除</text>
+    </view>
+  </view>
+  <view class="histroy_words">
+    <text wx:for="{{history}}" wx:key="index">{{item}}</text>
   </view>
   <view class="banner">
     <image src="https://c-xt.gitee.io/msfse/i/banner2.png" alt="" class="banner_img"></image>

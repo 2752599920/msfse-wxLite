@@ -5,16 +5,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    inputValue:'',
+    // keyWords:[],
+    history:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.readKeyWords();
   },
-
+  bindKeyInput: function (e) {
+    this.setData({
+      inputValue: e.detail.value
+    })
+  },
+  readKeyWords(){
+    if(wx.getStorageSync('KeyWords')){
+      this.setData({
+        history:wx.getStorageSync('KeyWords')
+      })
+    }
+  },
+  sendKeyWords(){
+    let history = this.data.history;
+    if(this.data.inputValue){
+      history.unshift(this.data.inputValue)
+      history = new Array(...new Set(history))
+      wx.setStorageSync('KeyWords',history)
+    }
+    this.readKeyWords();
+    // console.log(this.data.history);
+  },
+  delHistroyWords(){
+    wx.setStorageSync('KeyWords',[])
+    this.readKeyWords()
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

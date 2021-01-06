@@ -1,20 +1,41 @@
 <!--pages/news/news.wxml-->
 <view class="news">
-  <view class="news_list" bindtap="goNews">
-    <text class="title">改变自己，从美好的一天开始</text>
-    <view class="img">
-      <image src="https://c-xt.gitee.io/msfse/i/food2.png" mode="aspectFill"></image>
-    </view>
-    <view class="source">
-      <text>来源："晚间新闻"</text>
-      <text>2020-12-14</text>
-    </view>
-  </view>
-  <view class="news_list" bindtap="goNews">
-    <text class="title">习近平2020年11月25日在中央军委军事训练会议上强调 全面加强实战化军事训练 全面提高训练水平和打赢能力</text>
-    <view class="source">
-      <text>来源："晚间新闻"</text>
-      <text>2020-12-14</text>
-    </view>
-  </view>
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="全部">
+      <view class="news_list" bindtap="goNews"  wx:for="{{newsList}}" wx:key="index" data-id="{{item.id}}">
+        <text class="title">{{item.title}}</text>
+        <view class="img">
+          <image src="{{item.cover}}" mode="aspectFill"></image>
+        </view>
+        <view class="source">
+          <text>来源：{{item.origin}}</text>
+          <text>{{item.created_at}}</text>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="新闻">
+      <view class="news_list" bindtap="goNews"  wx:for="{{newsList}}" wx:key="index" data-id="{{item.id}}" wx:if="{{item.articleType == '新闻'}}">
+        <text class="title">{{item.title}}</text>
+        <view class="img">
+          <image src="{{item.cover}}" mode="aspectFill"></image>
+        </view>
+        <view class="source">
+          <text>来源：{{item.origin}}</text>
+          <text>{{item.created_at}}</text>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="折扣">
+      <view class="news_list" bindtap="goNews" wx:for="{{newsList}}" wx:key="index" data-id="{{item.id}}" wx:if="{{item.articleType == '折扣'}}">
+        <text class="title">{{item.title}}</text>
+        <view class="img">
+          <image src="{{item.cover}}" mode="aspectFill"></image>
+        </view>
+        <view class="source">
+          <text>来源：{{item.origin}}</text>
+          <text>{{item.created_at}}</text>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
 </view>

@@ -5,19 +5,23 @@
     <view class="button">搜索</view>
   </view>
   <view class="banner">
-    <image src="https://c-xt.gitee.io/msfse/i/banner1.png" alt="" class="banner_img"></image>
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- <image src="https://c-xt.gitee.io/msfse/i/banner1.png" alt="" class="banner_img"></image> -->
   </view>
   <view class="categroy">
     <text class="categroy_title">商品类型</text>
     <view class="categroy_link">
-      <view class="category_img" bindtap="goto">
-        <image src="https://c-xt.gitee.io/msfse/i/category1.jpg" mode="aspectFill" ></image>
-      </view>
-      <view class="category_img" bindtap="goto">
-        <image src="https://c-xt.gitee.io/msfse/i/category2.jpg" mode="aspectFill"></image>
-      </view>
-      <view class="category_img" bindtap="goto">
-        <image src="https://c-xt.gitee.io/msfse/i/category3.jpg" mode="aspectFill"></image>
+      <view class="category_img" bindtap="goto" wx:for="{{category}}" wx:key="index" data-id="{{item.id}}" data-cover="{{item.cover}}">
+        <image src="{{item.cover}}" mode="aspectFill" ></image>
       </view>
     </view>
   </view>
@@ -41,38 +45,22 @@
     <text class="shop_title">猜你喜欢</text>
     <view class="shop_link">
       <view class="shop_link_left">
-        <view class="shop_img" bindtap="goShop">
-          <image mode="widthFix" src="https://c-xt.gitee.io/msfse/i/shop_img1.jpg" alt=""></image>
+        <view class="shop_img" wx:for="{{boothList}}" wx:key="index" data-id="{{item.id}}" wx:if="{{index % 2 == 0}}" bindtap="goShop">
+          <image mode="widthFix" src="{{item.imgs}}" alt="" ></image>
           <view class="imformation">
-            <text class="shop_name">Q堡堡</text>
-            <text class="shop_info">中山.五桂山街道</text>
-            <text class="shop_space">距离100m</text>
-          </view>
-        </view>
-        <view class="shop_img">
-          <image mode="widthFix" src="https://c-xt.gitee.io/msfse/i/shop_img2.jpg" alt="" ></image>
-          <view class="imformation">
-            <text class="shop_name">Q堡堡</text>
-            <text class="shop_info">中山.五桂山街道</text>
-            <text class="shop_space">距离100m</text>
+            <text class="shop_name">{{item.boothName}}</text>
+            <text class="shop_info">{{item.address}}</text>
+            <text class="shop_space">距离{{item.distance}}m</text>
           </view>
         </view>
       </view>
       <view class="shop_link_right">
-        <view class="shop_img">
-          <image mode="widthFix" src="https://c-xt.gitee.io/msfse/i/shop_img2.jpg" alt="" ></image>
+        <view class="shop_img" wx:for="{{boothList}}" wx:key="index" data-id="{{item.id}}" wx:if="{{index % 2 != 0}}" bindtap="goShop" data-id="{{item.id}}">
+          <image mode="widthFix" src="{{item.imgs}}" alt="" ></image>
           <view class="imformation">
-            <text class="shop_name">Q堡堡</text>
-            <text class="shop_info">中山.五桂山街道</text>
-            <text class="shop_space">距离100m</text>
-          </view>
-        </view>
-        <view class="shop_img">
-          <image mode="widthFix" src="https://c-xt.gitee.io/msfse/i/shop_img1.jpg" alt="" ></image>
-          <view class="imformation">
-            <text class="shop_name">Q堡堡</text>
-            <text class="shop_info">中山.五桂山街道</text>
-            <text class="shop_space">距离100m</text>
+            <text class="shop_name">{{item.boothName}}</text>
+            <text class="shop_info">{{item.address}}</text>
+            <text class="shop_space">距离{{item.distance}}m</text>
           </view>
         </view>
       </view>

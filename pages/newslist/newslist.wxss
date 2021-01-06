@@ -19,3 +19,18 @@
 .newlist image{
   width: 100%;
 }
+.icon{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.reading,
+.likes{
+  background: #eee;
+}
+.reading,
+.likes,
+.icon_reading,
+.icon_likes{
+  vertical-align: middle;
+}

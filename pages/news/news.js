@@ -1,22 +1,40 @@
 // pages/news/news.js
+import {News} from './news-model'
+var news = new News()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    active:0,
+    newsList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.loadNews()
   },
-  goNews(){
+  loadNews(){
+    news.getArticleList(res=>{
+      console.log(res);
+      this.setData({
+        newsList:res.data.ArticleList
+      })
+    })
+  },
+  onChange(event) {
+    wx.showToast({
+      // title: `切换到标签 ${event.detail.name}`,
+      icon: 'none',
+    });
+  },
+  goNews(e){
+    let id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '../newslist/newslist',
+      url: `../newslist/newslist?id=${id}`,
     })
   },
   /**

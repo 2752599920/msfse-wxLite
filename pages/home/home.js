@@ -1,27 +1,71 @@
 // pages/home/home.js
+import {Home} from './home-model'
+var home = new Home();
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    category:[],
+    boothList:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.loadSwiper()
+    this.loadCategory()
+    this.loadBoothList()
+  },
+  loadSwiper(options){
     
   },
-  goto(){
-    wx.navigateTo({
-      url: '../category/category',
+  loadCategory(){
+    let options = {
+      url:'getCategory'
+    }
+    home._get(options,(res)=>{
+      this.setData({
+        category:res.data.Category
+      })
     })
   },
-  goShop(){
+  loadBoothList(){
+    let options = {
+      url:'getBoothList'
+    }
+    home._get(options,(res)=>{
+      //获取用户位置
+      wx.getLocation({
+        altitude: 'altitude',
+        success:(result)=>{
+          res.data.BoothList.forEach(item => {
+            let {GPS}=item;
+            let latitude = GPS.split(',')[0];
+            let longitude = GPS.split(',')[1];
+            item.distance = app.GetDistance(result.latitude,result.longitude,latitude,longitude);
+            this.setData({
+              boothList:res.data.BoothList
+            })
+          });
+        }
+      })
+    })
+  },
+  goto(e){
+    let id = e.currentTarget.dataset.id;
+    let cover = e.currentTarget.dataset.cover;
     wx.navigateTo({
-      url: '../shopinfo/shopinfo',
+      url: `../category/category?id=${id}&cover=${cover}`,
+    })
+  },
+  goShop(e){
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `../shopinfo/shopinfo?id=${id}`,
     })
   },
   gotoSearch(){

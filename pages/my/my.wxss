@@ -3,6 +3,11 @@
   width: 100%;
 
 }
+.apply{
+  float: right;
+  color: #ec3f42;
+  margin-right: 30rpx;
+}
 .head{
   width: 100%;
   height: 460rpx;

@@ -1,3 +1,5 @@
+import {Map} from './map-model'
+var map = new Map()
 Page({
 
   /**
@@ -6,62 +8,40 @@ Page({
   data: {
     longitude:null,
     latitude:null,
-    show:false,
-    markers: [
-      {
-        id: 0,
-        latitude: 22.437826,
-        longitude: 113.385224,
-        callout:{
-          content: " 广东理工职业学院",
-          padding:10,
-          display:'ALWAYS',
-          textAlign:'center',
-        }
-      },
-      {
-        id: 1,
-        latitude: 22.51594,
-        longitude: 113.3927,
-        callout:{
-          content: " 广东理工职业学院",
-          padding:10,
-          display:'ALWAYS',
-          textAlign:'center',
-        }
-      },
-    ]
+    markers: [],
   },
+  //搜索地点
   onChangeAddress: function () {
     wx.chooseLocation({
       success: (res)=>{
         let {latitude,longitude,name}=res;
         let {markers}=this.data;
-        markers[markers.length]={
-          id: markers.length,
-          latitude: latitude,
-          longitude: longitude,
-        },
-        this.setData({
-          latitude,
-          longitude,
-          markers
+        map.getNearbyBooth({latitude:latitude,longitude:longitude},(result)=>{
+          if(result.length){
+            this.getMarkers(result);
+            this.setData({
+              latitude,
+              longitude,
+              markers
+            })
+          }else{
+            wx.showToast({
+              title: '该区域暂无摊位,请更换位置后搜索',
+              icon:'none',
+              duration:3000,
+            })
+          }
         })
       }
     });
   },
-  showDetail:function(e){
-    console.log(e.markerId);
-    console.log(this.data.markers.find(item=>item.id=e.markerId));
-    this.setData({
-      show:true,
+  //跳转shopinfo
+  toShopinfo(e){
+    wx.navigateTo({
+      url: '../shopinfo/shopinfo?id='+e.detail.markerId,
     })
   },
-  hiddenDetail(){
-    this.setData({
-      show:false,
-    })
-  },
+  //回到用户定位位置
   clickcontrol(e) {
     let mpCtx = wx.createMapContext("map");
     mpCtx.moveToLocation();
@@ -74,7 +54,14 @@ Page({
       altitude: true,
       success:(res)=>{
         if (res.latitude && res.longitude) {
-          let {latitude,longitude}=res;
+        let {latitude,longitude}=res;
+        // 将用户位置加入缓存
+        wx.setStorageSync('latitude', latitude);
+        wx.setStorageSync('longitude', longitude);
+        //请求附近摊位
+        map.getNearbyBooth({latitude:latitude,longitude:longitude},(result)=>{
+          this.getMarkers(result);
+        })
           this.setData({
             latitude,
             longitude,
@@ -83,7 +70,29 @@ Page({
       }
     })
   },
-
+  getMarkers(result){
+    let markers=[];
+    result.forEach(item => {
+      let {GPS,address,id}=item;
+      let latitude = GPS.split(',')[0];
+      let longitude = GPS.split(',')[1];
+      markers.push({
+        id:id,
+        latitude:latitude,
+        longitude:longitude,
+        callout:{
+          content: address,
+          padding:10,
+          display:'ALWAYS',
+          textAlign:'center',
+        }
+      });
+    });
+    this.setData({
+      markers
+    })
+    console.log(this.data.markers);
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

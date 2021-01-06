@@ -1,0 +1,6 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+  <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" class="icon"/>
+  <view class="text">当前未登录</view>
+</view>
+<button open-type="getUserInfo" class="button" bindgetuserinfo="login">登录</button>

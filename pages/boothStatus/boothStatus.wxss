@@ -1,0 +1,16 @@
+/* pages/boothStatus/boothStatus.wxss */
+.booth_status{
+  box-sizing: border-box;
+  padding: 30rpx 0;
+}
+.status_list{
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  font-size: 32rpx;
+}
+.user_time{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  color: #ec3f42;
+}

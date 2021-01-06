@@ -1,25 +1,38 @@
 // pages/category/category.js
+import {CategoryList} from './category-model.js'
+var category = new CategoryList()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    cover:'',
+    categoryList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      cover:options.cover
+    })
+    this.loadParentId(options.id)
   },
-  goto(){
-        wx.navigateTo({
-          url: '../shop/shop',
-          
-        })
-      },
+  loadParentId(id){
+    category.getCategoryList(id,(res)=>{
+      this.setData({
+        categoryList:res.data.CategoryList
+      })
+    })
+  },
+  goto(e){
+    let name = e.currentTarget.dataset.name;
+    wx.navigateTo({
+      url: `../shop/shop?type=${name}`, 
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

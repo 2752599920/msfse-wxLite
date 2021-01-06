@@ -1,18 +1,37 @@
 // pages/my/my.js
+import {My} from './my-model.js'
+var my = new My()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //判断token是否存在
+    if(!wx.getStorageSync('token')){
+      wx.navigateTo({
+        url: '../login/login',
+      })
+    }
+  },
+  logout(){
+    wx.removeStorageSync('token');
+    wx.removeStorageSync('userInfo');
+    wx.navigateTo({
+      url: '../login/login',
+    })
+  },
+  gotoApply:function(){
+    wx.navigateTo({
+      url: '../apply/apply',
+    })
   },
   gotoreply:function(){
     wx.navigateTo({
@@ -20,8 +39,11 @@ Page({
     })
   },
   gotoSendUp(){
-    wx.navigateTo({
-      url: '../scan/scan',
+    wx.scanCode({
+      onlyFromCamera: true,
+      success:(res)=>{
+        console.log(res);
+      }
     })
   },
   gotoReply:function(){
@@ -40,7 +62,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      userInfo:wx.getStorageSync('userInfo'),
+    })
   },
 
   /**

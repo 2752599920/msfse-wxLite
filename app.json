@@ -12,10 +12,13 @@
     "pages/message/message",
     "pages/category/category",
     "pages/shopinfo/shopinfo",
-    "pages/conmment/comment",
+    "pages/comment/comment",
     "pages/newslist/newslist",
-    "pages/feedback/feedback"
-
+    "pages/feedback/feedback",
+    "pages/login/login",
+    "pages/apply/apply",
+    "pages/boothStatus/boothStatus"
+    
   ],
   "window":{
     "backgroundColor": "#000",

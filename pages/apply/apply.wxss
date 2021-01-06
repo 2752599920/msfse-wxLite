@@ -1,0 +1,9 @@
+/* pages/apply/apply.wxss */
+.apply{
+  box-sizing: border-box;
+  padding: 30rpx 0;
+}
+
+.back{
+  margin-bottom: 50rpx;
+}

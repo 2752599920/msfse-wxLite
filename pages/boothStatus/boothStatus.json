@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-panel": "@vant/weapp/panel/index",
+    "van-count-down": "@vant/weapp/count-down/index",
+    "van-divider": "@vant/weapp/divider/index"
+  }
+}
