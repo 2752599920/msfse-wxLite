@@ -1,5 +1,6 @@
 <!--pages/login/login.wxml-->
 <view class="login">
+  <image src="../../images/bg2.png" class="bg" mode="heightFix"></image>
   <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" class="icon"/>
   <view class="text">当前未登录</view>
 </view>

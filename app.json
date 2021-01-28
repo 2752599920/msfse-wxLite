@@ -21,7 +21,7 @@
     
   ],
   "window":{
-    "backgroundColor": "#000",
+    "backgroundColor": "#fff",
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "小程序",

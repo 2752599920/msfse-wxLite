@@ -14,6 +14,8 @@ Page({
     stars:'',
     imgs:"",
     fileList: [],
+    time:[],
+    day:[]
   },
 
   /**
@@ -29,7 +31,15 @@ Page({
   loadCommentList(id){
     comment.getCommentdata(id,(res)=>{
       this.setData({
-        CommentData:res.data.CommentList
+        CommentData:res.data.CommentList,
+      })
+      // console.log(this.data.CommentData[1].created_at)
+      this.data.CommentData.filter(item=>{
+        let times = item.created_at.split(' ');
+        this.data.time.push(times)
+        console.log(times)
+        console.log(this.data.time)
+        return item.created_at
       })
     })
   },

@@ -16,41 +16,5 @@
         </view>
       </view>
     </view>
-    <view class="user">
-      <image src="https://c-xt.gitee.io/msfse/i/food4.png" mode="aspectFill"></image>
-      <view class="article">
-        <view class="name">
-          <text class="user_name">地摊君</text>
-          <text class="reply_time">2020-12-16</text>
-        </view>
-        <view class="text">
-          <text>尊敬的摊主，你现在正在使用我们的地摊小程序。现在你已经被包围了</text>
-        </view>
-      </view>
-    </view>
-    <view class="user">
-      <image src="https://c-xt.gitee.io/msfse/i/food4.png" mode="aspectFill"></image>
-      <view class="article">
-        <view class="name">
-          <text class="user_name">地摊君</text>
-          <text class="reply_time">2020-12-16</text>
-        </view>
-        <view class="text">
-          <text>尊敬的摊主，你现在正在使用我们的地摊小程序。现在你已经被包围了</text>
-        </view>
-      </view>
-    </view>
-    <view class="user">
-      <image src="https://c-xt.gitee.io/msfse/i/food4.png" mode="aspectFill"></image>
-      <view class="article">
-        <view class="name">
-          <text class="user_name">地摊君</text>
-          <text class="reply_time">2020-12-16</text>
-        </view>
-        <view class="text">
-          <text>尊敬的摊主，你现在正在使用我们的地摊小程序。现在你已经被包围了</text>
-        </view>
-      </view>
-    </view>
   </view>
 </view>

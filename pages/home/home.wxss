@@ -1,9 +1,13 @@
 /* pages/home/home.wxss */
 .home{
   box-sizing: border-box;
-  padding: 20rpx 30rpx 0 30rpx;
+  padding: 20rpx 30rpx 0rpx 30rpx;
+}
+text{
+  display: block;
 }
 .search{
+  position: relative;
   width: 100%;
   height: 100rpx;
   display: flex;
@@ -12,7 +16,6 @@
   border: 2px solid #ec3f42;
   box-sizing: border-box;
   padding-left:25rpx;
-
 }
 #search{
   width: 100%;
@@ -32,7 +35,7 @@ background: #ec3f42;
 }
 .banner{
   width: 100%;
-  height: 204rpx;
+  height: 330rpx;
   margin:30rpx auto;
   border-radius: 20rpx;
   overflow: hidden;
@@ -49,19 +52,20 @@ height: 100%;
 .categroy_title,
 .sale_title,
 .shop_title{
-  font-weight: bold;
+  /* font-size: 42rpx; */
+  font-weight: 600;
   color:#333;
+  letter-spacing: 2rpx;
 }
 .categroy_link{
   width: 100%;
   display: flex;
   justify-content:space-between;
-  margin-top: 10rpx;
+  margin-top: 20rpx;
 }
 .category_img{
   width: 30%;
   height: 200rpx;
-  /* background: chartreuse; */
 }
 .category_img image{
   width: 100%;
@@ -80,8 +84,24 @@ width: 100%;
 }
 .sale_left,
 .sale_right{
-  width: 47%;
+  position: relative;
+  width: 49%;
   height: 100%;
+}
+.sale_left .icon,
+.right_top .icon,
+.right_bottom .icon{
+  position: absolute;
+  right:0;
+  top:0;
+  font-size:32rpx;
+  color:rgb(241, 239, 239);
+  background:#ec3f42;
+  padding:8rpx 14rpx;
+  font-weight: 500;
+  letter-spacing: 5rpx;
+  border-bottom-left-radius: 18rpx;
+  border-top-right-radius: 25rpx;
 }
 .sale_left image{
   width: 100%;
@@ -95,10 +115,11 @@ width: 100%;
 .right_bottom,
 .right_top{
   width: 100%;
-  height: 47%;
+  height: 49%;
+ position: relative;
 }
 .right_top{
-  margin-bottom: 6%;
+  margin-bottom: 3%;
 }
 .sale_right image{
   height: 100%;
@@ -110,11 +131,11 @@ width: 100%;
   display: flex;
   justify-content: space-between;
   /* background: chocolate; */
-  margin-top: 10rpx;
+  margin-top: 20rpx;
 }
 .shop_link_left,
 .shop_link_right{
-  width: 47%;
+  width: 49%;
   /* display: flex;
   flex-wrap: wrap; */
 }
@@ -124,10 +145,11 @@ width: 100%;
   flex-direction:column;
   border-radius: 25rpx;
   background: #ffffff;
-  box-shadow:  2px 3px 6px #bec4c4, 
-              -2px -3px 6px #ffffff;
-  margin-bottom: 50rpx;
+  border:#ccc solid 1rpx;
+  margin-bottom: 20rpx;
   overflow: hidden;
+  box-sizing: border-box;
+  padding:30rpx 20rpx;
 }
 .shop_img image{
   width: 100%;
@@ -135,22 +157,79 @@ width: 100%;
 .imformation{
   width: 100%;
   box-sizing: border-box;
-  padding:20rpx;
-}
-.imformation text{
-  display: block;
-  width: 100%;
+  padding-top:10rpx;
 }
 .shop_name{
-  font-size:46rpx;
+  font-size:40rpx;
   color:#ec3f42;
+  letter-spacing: 5rpx;
+  margin-bottom: 20rpx;
 }
 .shop_info{
   font-size:28rpx;
-  color: #333;
+  color: #666;
+  letter-spacing: .6px;
+  margin:14rpx 0rpx;
 }
 .shop_space{
-  text-align: right;
+  display: inline-block;
+  margin:0 auto;
   font-size:24rpx;
-  color: #999;
+  color: #fff;
+  letter-spacing: 7rpx;
+  background: #ec3f42;
+  border-radius: 25rpx;
+  padding: 10rpx 30rpx;
+  margin-left: 10rpx;
 }
+/* .box {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.box text {
+  height: 36px;
+  font-size: 1em;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  -moz-animation: marquee-top 2s linear infinite;
+  -webkit-animation: marquee-top 2s linear infinite;
+  animation: marquee-top 2s linear infinite;
+}
+.box text:nth-child(1) {
+  position: absolute;
+  left: -100%;
+  animation: marquee-top 2s 1s linear infinite;
+}
+.box .line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 34px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: var(--color);
+}
+
+@keyframes marquee-top {
+  0% {
+    left: 0;
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  100% {
+    left: 0;
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+} */

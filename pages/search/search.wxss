@@ -2,6 +2,7 @@
 .search{
   box-sizing: border-box;
   padding: 20rpx 30rpx 0 30rpx;
+  z-index:1;
 }
 .search_input{
   width: 100%;
@@ -10,6 +11,7 @@
   justify-content: space-between;
   border-radius: 5px;
   border: 2px solid #ec3f42;
+  /* border: 2px solid #333; */
   box-sizing: border-box;
   padding-left:25rpx;
 
@@ -27,8 +29,11 @@ width: 20%;
 height: 100%;
 line-height: 100rpx;
 text-align: center;
+/* color: #ec3f42; */
 color: #fff;
 background: #ec3f42;
+/* border: 1rpx solid #333; */
+
 }
 .banner{
   width: 100%;
@@ -45,12 +50,52 @@ height: 100%;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 30rpx;
+  margin-top: 40rpx;
+  color: #fff;
+  z-index: 100;
+  position: absolute;
+  letter-spacing: 6rpx;
+  font-weight: 200;
+}
+.search_info{
+  /* height: 600rpx;
+  border-radius: 38% 62% 63% 37% / 43% 44% 56% 59%;
+  background-image: radial-gradient( circle farthest-corner at 11.7% 80.6%,  rgba(249,185,255,1) 0%, rgba(177,172,255,1) 49.3%, rgba(98,203,255,1) 89% ); */
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 600rpx;
+  box-sizing: border-box;
+  padding-top:100rpx;
+  margin-bottom: 30rpx;
+  transition: all 1s linear;
+}
+.search_info_bg{
+  display:block;
+  border-radius: 38% 62% 63% 37% / 43% 44% 56% 59%;
+  background-image: 
+    radial-gradient( 
+      circle farthest-corner 
+      at 11.7% 80.6%,  
+      rgba(249,185,255,1) 0%, 
+      rgba(177,172,255,1) 49.3%, 
+      rgba(98,203,255,1) 89% 
+    );
+  /* border: 1rpx solid #333; */
+  width: 100%;
+  height: 600rpx;
+  box-sizing: border-box;
+  z-index: 0;
+  top:-16rpx;
+  position: absolute;
+  transform: rotate(0deg) scale(1);
+  transition: all 1s linear;
 }
 .search_often{
   width: 50%;
   text-align: center;
   margin-top: 20rpx;
+  font-size: 36rpx;
 }
 .histroy{
   display: flex;
@@ -68,6 +113,14 @@ height: 100%;
   margin-left: 5rpx;
   font-size: 32rpx;
 }
+.title{
+  font-size:32rpx;
+  font-weight: bold;
+  color:#fff;
+  padding-left:80rpx;
+  position: absolute;
+  letter-spacing: 5rpx;
+}
 .histroy_words{
   margin-top: 10rpx;
   display: flex;
@@ -79,6 +132,24 @@ height: 100%;
   margin:10rpx;
   border-radius: 100rpx;
   font-size: 32rpx;
+  /* color: #333; */
+  /* color: #ec3f42; */
+  /* border: 1rpx solid #333; */
   color: #fff;
-  background-image:linear-gradient(to right,#6930c3,#4361ee) ;
+    background: #f25c54;
+  /* background-image:linear-gradient(to right,#6930c3,#4361ee) ; */
 }
+.histroy_words text:hover:after{
+  content: 'x';
+}
+/* .square{
+  position: absolute;
+  top: 370rpx;
+  left:0rpx;
+  width: 100%;
+  height: 600rpx;
+  border-radius: 38% 62% 63% 37% / 43% 44% 56% 59%;
+  /* border:300rpx solid #6930c3;  */
+  /* background-image:linear-gradient(to right,#6930c3,#4361ee); */
+  /* background-image: radial-gradient( circle farthest-corner at 11.7% 80.6%,  rgba(249,185,255,1) 0%, rgba(177,172,255,1) 49.3%, rgba(98,203,255,1) 89% ); */
+  /* z-index:-1; */

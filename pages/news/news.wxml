@@ -1,7 +1,7 @@
 <!--pages/news/news.wxml-->
 <view class="news">
   <van-tabs active="{{ active }}" bind:change="onChange">
-    <van-tab title="全部">
+    <van-tab title="全部" class="box">
       <view class="news_list" bindtap="goNews"  wx:for="{{newsList}}" wx:key="index" data-id="{{item.id}}">
         <text class="title">{{item.title}}</text>
         <view class="img">

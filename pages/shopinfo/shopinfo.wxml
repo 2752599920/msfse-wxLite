@@ -1,41 +1,44 @@
 <!--pages/shopinfo/shopinfo.wxml-->
 <view class="shopinfo">
+  <view style="border:#ec3f42 solid 1rpx;border-radius:25rpx;">
     <image src="{{booth[0].imgs}}" mode="widthFix" class="shop_img"></image>
     <view class="name">
         <text>{{booth[0].boothName}}</text>
     </view>
+  </view>
     <view class="imformation">
       <view class="time">
         <text>营业时间</text>
         <text>{{booth[0].stagesOfUse}}--{{booth[0].timeOfUse}}</text>
       </view>
       <view class="distance">
-        <text>距离你</text>
-        <text>{{distance}}米</text>
+        <image src="../../images/vector-creator (1).png" mode="heightFix"></image>
+        <view class="top">
+          <text>距离你</text>
+        </view>
+        <view class="bottom">
+          <text>{{distance}}m</text>
+        </view>
       </view>
       <view class="phone">
         <text>联系电话</text>
         <text>{{booth[0].mobile}}</text>
       </view>
       <view class="address">
-        <view class="position">
           <text>摊位地址</text>
-          <text>{{booth[0].address}}</text>
-        </view>
-        <view class="tool">
-          <image src="https://c-xt.gitee.io/msfse/i/map.png" mode="widthFix"></image>
-        </view>
+          <text style="font-size:32rpx;">{{booth[0].address}}</text>
       </view>
     </view>
     <view class="comments">
         <view class="top">
           <text>摊位评论({{commentList.length}})</text>
-          <text class="more" bindtap="goComments" wx:if="{{ commentList.length > 0 }}" data-id="{{booth[0].id}}">查看更多></text>
+          <text class="more" bindtap="goComments" wx:if="{{ commentList.length > 0 }}" data-id="{{booth[0].id}}">查看更多</text>
           <text class="more" bindtap="goComments" wx:if="{{ commentList.length == 0 }}">评论</text>
         </view>
         <view class="comment_user">
+          <image src="../../images/vector-creator.png" class="bg" mode="heightFix"></image>
           <view class="user">
-            <image src="https://c-xt.gitee.io/msfse/i/food2.png"></image>
+            <!-- <image src="https://c-xt.gitee.io/msfse/i/food2.png"></image> -->
             <text>地摊君</text>
           </view>
           <view class="comments_text">
@@ -50,11 +53,13 @@
               value="{{commentList[0].stars}}"
               void-icon="star"
               readonly="true"
+              color="#6a00f4"
+              void-color="#fff"
             />
           </view>
         </view>
     </view>
-    <view class="report" bindtap="goReport">
-      <text>举报店家</text>
-    </view>
+</view>
+<view class="report" bindtap="goReport">
+  <text>举报店家</text>
 </view>

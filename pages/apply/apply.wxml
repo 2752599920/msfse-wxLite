@@ -52,7 +52,7 @@
     />
     <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
     <text>上传证件照</text>
-    <button bindtap="goto" wx:if="{{active == 0}}">下一步</button>
+    <button bindtap="goto" wx:if="{{active == 0}}" type="primary">下一步</button>
   </van-cell-group>
   <van-cell-group wx:if="{{active > 0 && active < 2}}">
     <van-field
@@ -113,8 +113,8 @@
     </view>
     <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
     <text>上传摊位图片</text>
-    <button bindtap="gotoBack" wx:if="{{active>0}}" class="back">上一步</button>
-    <button bindtap="gotoNext" wx:if="{{active > 0 && active < 2}}" class="next">下一步</button>
+    <button bindtap="gotoBack" wx:if="{{active>0}}" class="back" type="primary">上一步</button>
+    <button bindtap="gotoNext" wx:if="{{active > 0 && active < 2}}" class="next" type="primary">下一步</button>
   </van-cell-group>
   <van-cell-group wx:if="{{active > 1 && active < 3}}">
     <van-field
@@ -225,8 +225,8 @@
         />
       </picker>
     </view>
-    <button bindtap="gotoBack" wx:if="{{active>0}}" class="back">上一步</button>
-    <button bindtap="gotoEnd" wx:if="{{active > 1 && active < 3}}" class="next">提交</button>
+    <button bindtap="gotoBack" wx:if="{{active>0}}" class="back" type="primary">上一步</button>
+    <button bindtap="gotoEnd" wx:if="{{active > 1 && active < 3}}" class="next" type="primary">提交</button>
   </van-cell-group>
   <view wx:if="{{active == 3}}">
     <text>审核中...</text>

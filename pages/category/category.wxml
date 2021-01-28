@@ -1,19 +1,25 @@
 <!--pages/category/category.wxml-->
 <view class="category">
-  <view class="category_img">
-    <image src="{{cover}}" mode="widthFix"></image>
+
+  <view class="category_text">
+    <text class="title">美食小吃</text>
+    <text class="p">每一份美食都是辛勤我们的付出，节约粮食，从我做起</text>
+    <text class="p">疫情期间，出行请戴口罩！</text>
   </view>
   <view class="category_list">
     <view class="category_info" wx:for="{{categoryList}}" wx:key="index">
       <view class="list" bindtap="goto" data-name="{{item.name}}">
-        <image src="{{item.cover}}" mode="aspectFill"></image>
+        <view style="box-sizing:border-box;padding:30rpx 30rpx 0rpx 30rpx;">
+          <image src="{{item.cover}}" mode="aspectFill"></image>
+        </view>
         <view class="img_text">
           <text>{{item.name}}</text>
           <text>附近有100家</text>
         </view>
       </view>
     </view>
-    
   </view>
-
+  <view class="next">
+    <van-icon name="arrow" class="icon" />
+  </view>
 </view>

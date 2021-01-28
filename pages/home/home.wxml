@@ -1,11 +1,17 @@
 <!--pages/home/home.wxml-->
 <view class="home">
-  <view class="search"bindtap="gotoSearch">
+  <view class="search" bindtap="gotoSearch">
     <input type="search" name="search" id="search" placeholder="最新摊位--美食" disabled="true"></input>
     <view class="button">搜索</view>
+    <!-- <view class="box">
+      <view class="line">
+        <text>11</text>
+        <text>22</text>
+      </view>
+    </view> -->
   </view>
   <view class="banner">
-      <swiper indicator-dots='true' autoplay='true' interval='1000' circular='true'>
+      <swiper indicator-dots='true' autoplay='true' interval='2000' circular='true'>
         <block wx:for="{{bannerData}}" wx:key="id">
           <swiper-item>
             <navigator class='swiper-item'>
@@ -28,13 +34,16 @@
     <text class="sale_title">摊位大促销</text>
     <view class="sale_list">
       <view class="sale_left">
+        <text class="icon">正在热卖</text>
         <image src="https://c-xt.gitee.io/msfse/i/food1.png" mode="aspectFill"></image>
       </view>
       <view class="sale_right">
         <view class="right_top">
+          <text class="icon">特卖</text>
           <image src="https://c-xt.gitee.io/msfse/i/food4.png" mode="aspectFill"></image>
         </view>
         <view class="right_bottom">
+          <text class="icon">全场八折</text>
           <image src="https://c-xt.gitee.io/msfse/i/food3.png" mode="aspectFill"></image>
         </view>
       </view>
@@ -45,9 +54,10 @@
     <view class="shop_link">
       <view class="shop_link_left">
         <view class="shop_img" wx:for="{{boothList}}" wx:key="index" data-id="{{item.id}}" wx:if="{{index % 2 == 0}}" bindtap="goShop">
+          <text class="shop_name">{{item.boothName}}</text>
+          <!-- <view class="image"></view> -->
           <image mode="widthFix" src="{{item.imgs}}" alt="" ></image>
           <view class="imformation">
-            <text class="shop_name">{{item.boothName}}</text>
             <text class="shop_info">{{item.address}}</text>
             <text class="shop_space">距离{{item.distance}}m</text>
           </view>
@@ -55,9 +65,9 @@
       </view>
       <view class="shop_link_right">
         <view class="shop_img" wx:for="{{boothList}}" wx:key="index" data-id="{{item.id}}" wx:if="{{index % 2 != 0}}" bindtap="goShop" data-id="{{item.id}}">
+          <text class="shop_name">{{item.boothName}}</text>
           <image mode="widthFix" src="{{item.imgs}}" alt="" ></image>
           <view class="imformation">
-            <text class="shop_name">{{item.boothName}}</text>
             <text class="shop_info">{{item.address}}</text>
             <text class="shop_space">距离{{item.distance}}m</text>
           </view>
