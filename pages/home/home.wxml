@@ -3,15 +3,15 @@
   <view class="search" bindtap="gotoSearch">
     <input type="search" name="search" id="search" placeholder="最新摊位--美食" disabled="true"></input>
     <view class="button">搜索</view>
-    <!-- <view class="box">
-      <view class="line">
-        <text>11</text>
-        <text>22</text>
-      </view>
-    </view> -->
+  </view>
+  <view class="notice">
+    <van-notice-bar
+    left-icon="volume-o"
+    text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。"
+  />
   </view>
   <view class="banner">
-      <swiper indicator-dots='true' autoplay='true' interval='2000' circular='true'>
+      <swiper autoplay='true' interval='2000' circular='true' >
         <block wx:for="{{bannerData}}" wx:key="id">
           <swiper-item>
             <navigator class='swiper-item'>
@@ -22,7 +22,15 @@
       </swiper>
     <!-- <image src="https://c-xt.gitee.io/msfse/i/banner1.png" alt="" class="banner_img"></image> -->
   </view>
-  <view class="categroy">
+  <van-grid column-num="3">
+    <van-grid-item icon="photo-o" text="摊位申请" bindtap="goReply"/>
+    <van-grid-item icon="photo-o" text="附近摊位" bindtap="goBooth"/>
+    <van-grid-item icon="photo-o" text="签到扫码" />
+    <van-grid-item icon="photo-o" text="摊位公告" bindtap="goNews"/>
+    <van-grid-item icon="photo-o" text="摊位促销" />
+    <van-grid-item icon="photo-o" text="优质摊位" />
+  </van-grid>
+  <!-- <view class="categroy">
     <text class="categroy_title">商品类型</text>
     <view class="categroy_link">
       <view class="category_img" bindtap="goto" wx:for="{{category}}" wx:key="index" data-id="{{item.id}}" data-cover="{{item.cover}}">
@@ -55,7 +63,6 @@
       <view class="shop_link_left">
         <view class="shop_img" wx:for="{{boothList}}" wx:key="index" data-id="{{item.id}}" wx:if="{{index % 2 == 0}}" bindtap="goShop">
           <text class="shop_name">{{item.boothName}}</text>
-          <!-- <view class="image"></view> -->
           <image mode="widthFix" src="{{item.imgs}}" alt="" ></image>
           <view class="imformation">
             <text class="shop_info">{{item.address}}</text>
@@ -74,6 +81,6 @@
         </view>
       </view>
     </view>
-  </view>
+  </view> -->
  
 </view>

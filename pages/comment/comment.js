@@ -14,8 +14,8 @@ Page({
     stars:'',
     imgs:"",
     fileList: [],
-    time:[],
-    day:[]
+    show: false,
+    show2:false
   },
 
   /**
@@ -29,19 +29,33 @@ Page({
     this.addComment()
   },
   loadCommentList(id){
-    comment.getCommentdata(id,(res)=>{
+    comment.getCommentdata(id,(res)=>{ 
+      res.data.CommentList.filter(item=>{
+        let times = item.created_at.split(' ');
+        item.created_at = times
+        // console.log(item.created_at)
+        return item.created_at
+      })
       this.setData({
         CommentData:res.data.CommentList,
       })
-      // console.log(this.data.CommentData[1].created_at)
-      this.data.CommentData.filter(item=>{
-        let times = item.created_at.split(' ');
-        this.data.time.push(times)
-        console.log(times)
-        console.log(this.data.time)
-        return item.created_at
-      })
     })
+  },
+  showPopup() {
+    this.setData({ 
+      show: true
+    });
+    setTimeout(()=>{
+      this.setData({ 
+        show2: true
+      })
+    },400);
+  },
+  onClose() {
+    this.setData({
+      show: false,
+      show2:false
+    });
   },
   addComment(){
     var obj = {

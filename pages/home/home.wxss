@@ -36,14 +36,22 @@ background: #ec3f42;
 .banner{
   width: 100%;
   height: 330rpx;
-  margin:30rpx auto;
-  border-radius: 20rpx;
+  margin:20rpx auto;
+  border-radius: 25rpx;
   overflow: hidden;
 }
-.banner_img{
-width: 100%;
-height: 100%;
+.banner image{
+  width: 100%;
+  height: 330rpx !important;
 }
+
+.notice{
+  margin-top: 20rpx;
+}
+
+
+
+
 .categroy,
 .shop{
   width: 100%;

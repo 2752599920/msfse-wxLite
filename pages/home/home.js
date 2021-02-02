@@ -82,6 +82,21 @@ Page({
       url: '../search/search',
     })
   },
+  goReply(){
+    wx.navigateTo({
+      url: '../apply/apply',
+    })
+  },
+  goBooth(){
+    wx.switchTab({
+      url: '../map/map',
+    })
+  },
+  goNews(){
+    wx.switchTab({
+      url: '../news/news',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

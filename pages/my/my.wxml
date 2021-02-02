@@ -1,20 +1,19 @@
 <!--pages/my/my.wxml-->
 <view class="my">
-  <view class="apply" bindtap="gotoApply">
-    <text>申请摊位</text>
-  </view>
   <view class="head">
-    <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+    <view class="img">
+      <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+    </view>
+    <view class="user_name">
+      <text>{{userInfo.nickName}}</text>
+      <text>你好，明天</text>
+    </view>
   </view>
-  <view class="user_name">
-    <text>{{userInfo.nickName}}</text>
-    <text>你好，明天</text>
-  </view>
-  <view class="user_img"></view>
+  <!-- <view class="user_img"></view> -->
 </view>
 <view class="content">
   <view class="tab">
-    <text>欢迎您，地摊君</text>
+    <text>欢迎您，{{userInfo.nickName}}</text>
   </view>
   <view class="imformation">
     <view class="position">

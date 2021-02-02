@@ -1,40 +1,49 @@
 <!--pages/news/news.wxml-->
 <view class="news">
-  <van-tabs active="{{ active }}" bind:change="onChange">
-    <van-tab title="全部" class="box">
-      <view class="news_list" bindtap="goNews"  wx:for="{{newsList}}" wx:key="index" data-id="{{item.id}}">
+  <van-tabs active="{{ active }}" bind:change="onChange" color="#ec3f42">
+    <van-tab title="全部" class="box" >
+      <view  bindtap="goNews"  wx:for="{{newsList}}" wx:key="index" data-id="{{item.id}}">
+      <!-- <view class="news_list">
         <text class="title">{{item.title}}</text>
-        <view class="img">
+        <view class="img" wx:if="{{item.cover != null}}">
           <image src="{{item.cover}}" mode="aspectFill"></image>
         </view>
         <view class="source">
           <text>来源：{{item.origin}}</text>
           <text>{{item.created_at}}</text>
         </view>
+      </view> -->
+      <van-cell center title="{{item.title}}" value="{{item.created_at}}" label="来源：{{item.origin}}" />
       </view>
     </van-tab>
     <van-tab title="新闻">
-      <view class="news_list" bindtap="goNews"  wx:for="{{newsList}}" wx:key="index" data-id="{{item.id}}" wx:if="{{item.articleType == '新闻'}}">
-        <text class="title">{{item.title}}</text>
-        <view class="img">
-          <image src="{{item.cover}}" mode="aspectFill"></image>
-        </view>
-        <view class="source">
-          <text>来源：{{item.origin}}</text>
-          <text>{{item.created_at}}</text>
-        </view>
+      <view bindtap="goNews"  wx:for="{{newsList}}" wx:key="index" data-id="{{item.id}}" wx:if="{{item.articleType == '新闻'}}">
+        <!-- <view class="news_list" >
+          <text class="title">{{item.title}}</text>
+          <view class="img" wx:if="{{item.cover != null}}">
+            <image src="{{item.cover}}" mode="aspectFill"></image>
+          </view>
+          <view class="source">
+            <text>来源：{{item.origin}}</text>
+            <text>{{item.created_at}}</text>
+          </view>
+        </view> -->
+        <van-cell center title="{{item.title}}" value="{{item.created_at}}" label="来源：{{item.origin}}" />
       </view>
     </van-tab>
     <van-tab title="折扣">
-      <view class="news_list" bindtap="goNews" wx:for="{{newsList}}" wx:key="index" data-id="{{item.id}}" wx:if="{{item.articleType == '折扣'}}">
-        <text class="title">{{item.title}}</text>
-        <view class="img">
-          <image src="{{item.cover}}" mode="aspectFill"></image>
-        </view>
-        <view class="source">
-          <text>来源：{{item.origin}}</text>
-          <text>{{item.created_at}}</text>
-        </view>
+      <view bindtap="goNews" wx:for="{{newsList}}" wx:key="index" data-id="{{item.id}}" wx:if="{{item.articleType == '折扣'}}">
+        <!-- <view class="news_list">
+          <text class="title">{{item.title}}</text>
+          <view class="img" wx:if="{{item.cover != null}}">
+            <image src="{{item.cover}}" mode="aspectFill"></image>
+          </view>
+          <view class="source">
+            <text>来源：{{item.origin}}</text>
+            <text>{{item.created_at}}</text>
+          </view>
+        </view> -->
+        <van-cell center title="{{item.title}}" value="{{item.created_at}}" label="来源：{{item.origin}}" />
       </view>
     </van-tab>
   </van-tabs>

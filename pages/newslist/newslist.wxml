@@ -6,10 +6,13 @@
       <text>作者：{{newsList.author}}</text>
       <text>时间：{{newsList.created_at}}</text>
   </view>
+  <view class="article">
+    <text>{{newsList.content}}</text>
+  </view>
   <view class="img">
     <image src="{{newsList.cover}}" mode="widthFix"></image>
   </view>
-  <view class="icon">
+  <!-- <view class="icon">
     <view class="reading" class="icon_reading" color="#ec3f42">
       <van-icon name="column" />
       <text>阅读：{{newsList.reading}}</text>
@@ -18,5 +21,5 @@
       <van-icon name="good-job" class="icon_likes" color="#ec3f42"/>
       <text>点赞：{{newsList.likes}}</text>
     </view>
-  </view>
+  </view> -->
 </view>

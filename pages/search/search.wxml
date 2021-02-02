@@ -20,7 +20,7 @@
   <!-- <view class="banner">
     <image src="https://c-xt.gitee.io/msfse/i/banner2.png" alt="" class="banner_img"></image>
   </view> -->
-  <view class="search_info" >
+  <view class="search_info" style="margin-top:20rpx;">
     <view class="search_info_bg" style="border-radius:{{bgrandom}};background-image:{{bgc}};transform: scale({{S}});"></view>
     <text class="title">搜索推荐</text>
     <view class="search_list">
