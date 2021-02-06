@@ -9,3 +9,7 @@
   box-sizing: border-box;
   /* background:#999; */
 } 
+.border{
+  border: none;
+  background: #333;
+}

@@ -22,8 +22,9 @@
   ],
   "window":{
     "backgroundColor": "#fff",
+    "backgroundColorBottom":"#fff",
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#ffe38f",
     "navigationBarTitleText": "小程序",
     "navigationBarTextStyle":"black"
   },
@@ -53,9 +54,10 @@
         "iconPath":"./images/my.png",
         "selectedIconPath":"./images/my_active_selected.png"
       }
-    ]
+    ],
+    "ext-class":"border"
   },
-  "borderStyle":"white",
+  "borderStyle":"red",
   "selectedColor":"red",
   "style": "v2",
   "sitemapLocation": "sitemap.json"
